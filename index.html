@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LUMI — Live in Style</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400;1,500;1,600&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600;1,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="utility-bar">
+    <div class="utility-bar-inner">
+        <span>Free Shipping on orders over $75</span>
+        <span class="utility-dot">&middot;</span>
+        <span>Easy 30-Day Returns</span>
+        <span class="utility-dot">&middot;</span>
+        <span>Secure Checkout</span>
+    </div>
+</div>
+
+<header class="site-header">
+    <nav class="main-nav">
+        <div class="nav-left">
+            <button class="nav-toggle" id="nav-toggle" aria-label="Menu">&#9776;</button>
+            <a href="index.html" class="nav-logo"><img src="L.svg" alt="LUMI"></a>
+            <ul>
+                <li><a href="Go_to_shopping.html">New In</a></li>
+                <li><a href="Go_to_shopping.html">Women</a></li>
+                <li><a href="Go_to_shopping.html">Men</a></li>
+                <li><a href="Go_to_shopping.html">Kids</a></li>
+                <li><a href="Go_to_shopping.html">Bags</a></li>
+                <li><a href="Go_to_shopping.html">Shoes</a></li>
+                <li><a href="Go_to_shopping.html">Accessories</a></li>
+                <li><a href="Go_to_shopping.html">Perfume</a></li>
+                <li><a href="Go_to_shopping.html" class="sale">Sale</a></li>
+            </ul>
+        </div>
+        <div class="nav-right">
+            <div class="nav-search">
+                <input type="text" id="nav-search-input" placeholder="Search...">
+            </div>
+            <a href="login.html" title="Account" id="account-link">&#9679; <span class="account-name">Login</span></a>
+            <a href="#" title="Wishlist"><svg class="bm-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg></a>
+            <a href="cart.html" title="Cart">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+                <span class="cart-count">(<span id="cart-count">0</span>)</span>
+            </a>
+        </div>
+    </nav>
+    <div class="mobile-menu" id="mobile-menu">
+        <div class="mobile-menu-panel">
+            <button class="mobile-close" id="mobile-close" aria-label="Close">&times;</button>
+            <div class="mobile-search-wrap">
+                <input type="text" id="mobile-search-input" placeholder="Search products...">
+            </div>
+            <ul class="mobile-menu-links">
+                <li><a href="Go_to_shopping.html">New In</a></li>
+                <li><a href="Go_to_shopping.html">Women</a></li>
+                <li><a href="Go_to_shopping.html">Men</a></li>
+                <li><a href="Go_to_shopping.html">Kids</a></li>
+                <li><a href="Go_to_shopping.html">Bags</a></li>
+                <li><a href="Go_to_shopping.html">Shoes</a></li>
+                <li><a href="Go_to_shopping.html">Accessories</a></li>
+                <li><a href="Go_to_shopping.html">Perfume</a></li>
+                <li><a href="Go_to_shopping.html" class="sale">Sale</a></li>
+            </ul>
+            <a href="login.html" class="mobile-account-link">&#9679; Account</a>
+        </div>
+    </div>
+</header>
+
+<section class="hero-showcase">
+    <div class="hero-media">
+        <img src="PHOTOS/hero.png" alt="LUMI New Collection" class="hero-media-img">
+        <div class="hero-scrim"></div>
+        <div class="hero-scrim-edge"></div>
+        <div class="hero-spine"><span>Edition No. 01 — Summer 2026</span></div>
+        <div class="hero-eyebrow-tag">
+            <span class="brand-cursive">Lumi</span> Presents
+            <span class="gold-line"></span>
+        </div>
+    </div>
+    <div class="hero-editorial">
+        <h1 class="hero-headline">New<br>Collection</h1>
+        <div class="hero-cta-block">
+            <p class="hero-dek">Considered pieces for the way you actually live &mdash; from tailored linen to hand-finished leather.</p>
+            <a href="Go_to_shopping.html" class="hero-cta">Shop Now &rarr;</a>
+        </div>
+    </div>
+</section>
+
+<section class="collection-tabs">
+    <div class="tab-bar">
+        <button class="tab-btn tab-active" data-tab="new-arrivals">New Arrivals</button>
+        <button class="tab-btn" data-tab="best-sellers">Best Sellers</button>
+    </div>
+
+    <div class="tab-scroll-wrap">
+        <button class="tab-scroll-arrow tab-scroll-arrow-left" id="tab-scroll-left">&#10094;</button>
+        <button class="tab-scroll-arrow tab-scroll-arrow-right" id="tab-scroll-right">&#10095;</button>
+        <div class="tab-grid" id="tab-grid">
+
+            <div class="product-card" data-tab-group="new-arrivals">
+                <div class="product-photo">
+                    <img src="https://images.unsplash.com/photo-1571273134620-1ef375de9b84?w=800&auto=format&fit=crop&q=60" alt="The Midi">
+                </div>
+                <div class="product-info">
+                    <div class="name">
+                        <span class="name-title">The Midi</span>
+                        <span class="name-sub">Women&rsquo;s Fit &amp; Flare Dress</span>
+                    </div>
+                    <button class="bookmark-btn" aria-label="Bookmark" data-product="The Midi"><svg class="bm-icon" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg></button>
+                </div>
+            </div>
+
+            <div class="product-card" data-tab-group="new-arrivals">
+                <div class="product-photo">
+                    <img src="https://images.unsplash.com/photo-1616406432452-07bc5938759d?w=800&auto=format&fit=crop&q=60" alt="The Penny">
+                </div>
+                <div class="product-info">
+                    <div class="name">
+                        <span class="name-title">The Penny</span>
+                        <span class="name-sub">Women&rsquo;s Leather Loafers</span>
+                    </div>
+                    <button class="bookmark-btn" aria-label="Bookmark" data-product="The Penny"><svg class="bm-icon" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg></button>
+                </div>
+            </div>
+
+            <div class="product-card" data-tab-group="new-arrivals">
+                <div class="product-photo">
+                    <img src="https://images.unsplash.com/photo-1571875335894-3ac94e28c98a?w=800&auto=format&fit=crop&q=60" alt="The Adorn">
+                </div>
+                <div class="product-info">
+                    <div class="name">
+                        <span class="name-title">The Adorn</span>
+                        <span class="name-sub">Women&rsquo;s Gold Jewelry Set</span>
+                    </div>
+                    <button class="bookmark-btn" aria-label="Bookmark" data-product="The Adorn"><svg class="bm-icon" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg></button>
+                </div>
+            </div>
+
+            <div class="product-card" data-tab-group="new-arrivals">
+                <div class="product-photo">
+                    <img src="https://images.unsplash.com/photo-1543422655-ac1c6ca993ed?w=800&auto=format&fit=crop&q=60" alt="The Essence">
+                </div>
+                <div class="product-info">
+                    <div class="name">
+                        <span class="name-title">The Essence</span>
+                        <span class="name-sub">Men&rsquo;s Eau de Parfum</span>
+                    </div>
+                    <button class="bookmark-btn" aria-label="Bookmark" data-product="The Essence"><svg class="bm-icon" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg></button>
+                </div>
+            </div>
+
+            <div class="product-card" data-tab-group="new-arrivals">
+                <div class="product-photo">
+                    <img src="https://images.unsplash.com/photo-1602442188490-f9e5345affc9?w=800&auto=format&fit=crop&q=60" alt="The Noir">
+                </div>
+                <div class="product-info">
+                    <div class="name">
+                        <span class="name-title">The Noir</span>
+                        <span class="name-sub">Unisex Intense Fragrance</span>
+                    </div>
+                    <button class="bookmark-btn" aria-label="Bookmark" data-product="The Noir"><svg class="bm-icon" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg></button>
+                </div>
+            </div>
+
+            <div class="product-card" data-tab-group="new-arrivals">
+                <div class="product-photo">
+                    <img src="https://images.unsplash.com/photo-1661980377011-61e36f7bd9d2?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="The Timer">
+                </div>
+                <div class="product-info">
+                    <div class="name">
+                        <span class="name-title">The Timer</span>
+                        <span class="name-sub">Unisex Leather Strap Watch</span>
+                    </div>
+                    <button class="bookmark-btn" aria-label="Bookmark" data-product="The Timer"><svg class="bm-icon" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg></button>
+                </div>
+            </div>
+
+            <div class="product-card" data-tab-group="best-sellers">
+                <div class="product-photo">
+                    <img src="https://images.unsplash.com/photo-1574365569389-a10d488ca3fb?w=800&auto=format&fit=crop&q=60" alt="The Carryall">
+                </div>
+                <div class="product-info">
+                    <div class="name">
+                        <span class="name-title">The Carryall</span>
+                        <span class="name-sub">Women&rsquo;s Canvas Tote</span>
+                    </div>
+                    <button class="bookmark-btn" aria-label="Bookmark" data-product="The Carryall"><svg class="bm-icon" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg></button>
+                </div>
+            </div>
+
+            <div class="product-card" data-tab-group="best-sellers">
+                <div class="product-photo">
+                    <img src="https://images.unsplash.com/photo-1541643600914-78b084683601?w=800&auto=format&fit=crop&q=60" alt="The Bloom">
+                </div>
+                <div class="product-info">
+                    <div class="name">
+                        <span class="name-title">The Bloom</span>
+                        <span class="name-sub">Women&rsquo;s Eau de Parfum</span>
+                    </div>
+                    <button class="bookmark-btn" aria-label="Bookmark" data-product="The Bloom"><svg class="bm-icon" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg></button>
+                </div>
+            </div>
+
+            <div class="product-card" data-tab-group="best-sellers">
+                <div class="product-photo">
+                    <img src="https://images.unsplash.com/photo-1664286074176-5206ee5dc878?w=800&auto=format&fit=crop&q=60" alt="The Cinch">
+                </div>
+                <div class="product-info">
+                    <div class="name">
+                        <span class="name-title">The Cinch</span>
+                        <span class="name-sub">Men&rsquo;s Full-Grain Belt</span>
+                    </div>
+                    <button class="bookmark-btn" aria-label="Bookmark" data-product="The Cinch"><svg class="bm-icon" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg></button>
+                </div>
+            </div>
+
+            <div class="product-card" data-tab-group="best-sellers">
+                <div class="product-photo">
+                    <img src="https://images.unsplash.com/photo-1771012266254-9e58941dbb45?w=800&auto=format&fit=crop&q=60" alt="The Stride">
+                </div>
+                <div class="product-info">
+                    <div class="name">
+                        <span class="name-title">The Stride</span>
+                        <span class="name-sub">Women&rsquo;s Slim Straight Jeans</span>
+                    </div>
+                    <button class="bookmark-btn" aria-label="Bookmark" data-product="The Stride"><svg class="bm-icon" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg></button>
+                </div>
+            </div>
+
+            <div class="product-card" data-tab-group="best-sellers">
+                <div class="product-photo">
+                    <img src="https://images.unsplash.com/photo-1611233299310-f6276ff55307?w=800&auto=format&fit=crop&q=60" alt="The Stiletto">
+                </div>
+                <div class="product-info">
+                    <div class="name">
+                        <span class="name-title">The Stiletto</span>
+                        <span class="name-sub">Women&rsquo;s Pointed Heels</span>
+                    </div>
+                    <button class="bookmark-btn" aria-label="Bookmark" data-product="The Stiletto"><svg class="bm-icon" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg></button>
+                </div>
+            </div>
+
+            <div class="product-card" data-tab-group="best-sellers">
+                <div class="product-photo">
+                    <img src="https://images.unsplash.com/photo-1511499767150-a48a237f0083?w=800&auto=format&fit=crop&q=60" alt="The Shield">
+                </div>
+                <div class="product-info">
+                    <div class="name">
+                        <span class="name-title">The Shield</span>
+                        <span class="name-sub">Unisex Aviator Sunglasses</span>
+                    </div>
+                    <button class="bookmark-btn" aria-label="Bookmark" data-product="The Shield"><svg class="bm-icon" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg></button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<section class="showcase-section reveal">
+    <div class="showcase-grid">
+        <div class="showcase-feature">
+            <img src="https://images.unsplash.com/photo-1698514474165-d0cafdd37cbf?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDQyfHx8ZW58MHx8fHx8" alt="Shop Best Sellers" class="showcase-feature-img">
+            <a href="Go_to_shopping.html" class="showcase-feature-cta">Shop Best Sellers</a>
+        </div>
+        <div class="showcase-scroll-wrap">
+            <button class="showcase-scroll-arrow showcase-scroll-arrow-left" id="showcase-scroll-left" aria-label="Scroll left">&#10094;</button>
+            <button class="showcase-scroll-arrow showcase-scroll-arrow-right" id="showcase-scroll-right" aria-label="Scroll right">&#10095;</button>
+            <div class="showcase-track" id="showcase-track">
+
+                <div class="showcase-product">
+                    <div class="showcase-card">
+                        <span class="showcase-badge badge-bestseller">Best Seller</span>
+                        <div class="showcase-photo">
+                            <img src="https://plus.unsplash.com/premium_photo-1681498947021-6875d6a7b21f?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="The Carryall">
+                        </div>
+                    </div>
+                    <div class="showcase-info">
+                        <div class="showcase-info-row">
+                            <span class="name-title">The Carryall</span>
+                            <button class="bookmark-btn showcase-bookmark" data-product="The Carryall" aria-label="Bookmark The Carryall"><svg class="bm-icon" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg></button>
+                        </div>
+                        <span class="name-sub">Women&rsquo;s Canvas Tote</span>
+                    </div>
+                </div>
+
+                <div class="showcase-product">
+                    <div class="showcase-card">
+                        <span class="showcase-badge badge-bestseller">Best Seller</span>
+                        <div class="showcase-photo">
+                    <img src="https://images.unsplash.com/photo-1664286074176-5206ee5dc878?w=800&auto=format&fit=crop&q=60" alt="The Cinch">
+                        </div>
+                    </div>
+                    <div class="showcase-info">
+                        <div class="showcase-info-row">
+                            <span class="name-title">The Cinch</span>
+                            <button class="bookmark-btn showcase-bookmark" data-product="The Cinch" aria-label="Bookmark The Cinch"><svg class="bm-icon" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg></button>
+                        </div>
+                        <span class="name-sub">Men&rsquo;s Full-Grain Belt</span>
+                    </div>
+                </div>
+
+                <div class="showcase-product">
+                    <div class="showcase-card">
+                        <span class="showcase-badge badge-new">New</span>
+                        <div class="showcase-photo">
+                    <img src="https://images.unsplash.com/photo-1661980377011-61e36f7bd9d2?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="The Timer">
+                        </div>
+                    </div>
+                    <div class="showcase-info">
+                        <div class="showcase-info-row">
+                            <span class="name-title">The Timer</span>
+                            <button class="bookmark-btn showcase-bookmark" data-product="The Timer" aria-label="Bookmark The Timer"><svg class="bm-icon" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg></button>
+                        </div>
+                        <span class="name-sub">Unisex Leather Strap Watch</span>
+                    </div>
+                </div>
+
+                <div class="showcase-product">
+                    <div class="showcase-card">
+                        <span class="showcase-badge badge-bestseller">Best Seller</span>
+                        <div class="showcase-photo">
+                    <img src="https://images.unsplash.com/photo-1458538977777-0549b2370168?w=800&auto=format&fit=crop&q=60" alt="The Bloom">
+                        </div>
+                    </div>
+                    <div class="showcase-info">
+                        <div class="showcase-info-row">
+                            <span class="name-title">The Bloom</span>
+                            <button class="bookmark-btn showcase-bookmark" data-product="The Bloom" aria-label="Bookmark The Bloom"><svg class="bm-icon" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg></button>
+                        </div>
+                        <span class="name-sub">Women&rsquo;s Eau de Parfum</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="category-tiles reveal">
+    <div class="category-tiles-grid">
+        <a href="Go_to_shopping.html" class="category-tile">
+            <div class="cat-image">
+                <img src="https://images.unsplash.com/photo-1617178388553-a9d022974a5c?q=80&w=1180&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Women">
+            </div>
+            <span class="cat-label">Women</span>
+        </a>
+        <a href="Go_to_shopping.html" class="category-tile">
+            <div class="cat-image">
+                <img src="https://images.unsplash.com/photo-1479064555552-3ef4979f8908?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Men">
+            </div>
+            <span class="cat-label">Men</span>
+        </a>
+        <a href="Go_to_shopping.html" class="category-tile">
+            <div class="cat-image">
+                <img src="https://plus.unsplash.com/premium_photo-1675183691244-1fc0359fa1f6?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Kids">
+            </div>
+            <span class="cat-label">Kids</span>
+        </a>
+    </div>
+</section>
+
+<section class="quote-section reveal">
+    <div class="gold-line"></div>
+    <div class="quote-text">&ldquo;Fashion is the armor to survive the reality of everyday life.&rdquo;</div>
+    <div class="quote-attribution">LUMI — Live in Style</div>
+</section>
+
+<section class="content-carousel reveal">
+    <div class="content-carousel-inner">
+        <div class="content-image">
+            <img src="https://images.unsplash.com/photo-1562347174-7370ad83dc47?q=80&w=1674&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="LUMI Craftsmanship">
+        </div>
+        <div class="content-text">
+            <span class="content-overline">Designed for Life</span>
+            <h2 class="content-heading">Crafted for Those Who Refuse to Compromise</h2>
+            <p class="content-body">Every piece in the LUMI collection is selected for its quality, feel, and longevity. From Italian leather goods to hand-finished accessories, we believe what you wear should work as hard as you do.</p>
+            <a href="Go_to_shopping.html" class="content-cta">Explore the Collection</a>
+        </div>
+    </div>
+</section>
+
+<section class="blog-section reveal">
+    <div class="blog-head">
+        <h2 class="section-title">From the Journal</h2>
+        <a href="#" class="view-all">View All</a>
+    </div>
+    <div class="blog-scroll" id="blog-scroll">
+        <div class="blog-card">
+            <div class="blog-image">
+                <img src="https://images.unsplash.com/photo-1538329972958-465d6d2144ed?w=600&auto=format&fit=crop&q=60" alt="Summer Style Guide">
+            </div>
+            <div class="blog-meta">Style &middot; June 2026</div>
+            <h3 class="blog-title">The Essential Summer Capsule Wardrobe</h3>
+            <p class="blog-excerpt">Six timeless pieces that will carry you from the office to the coast all season long.</p>
+        </div>
+
+        <div class="blog-card">
+            <div class="blog-image">
+                <img src="https://images.unsplash.com/photo-1520639888713-7851133b1ed0?w=600&auto=format&fit=crop&q=60" alt="Leather Care">
+            </div>
+            <div class="blog-meta">Care &middot; May 2026</div>
+            <h3 class="blog-title">How to Care for Your Leather Goods</h3>
+            <p class="blog-excerpt">A simple guide to keeping your favorite pieces beautiful for years to come.</p>
+        </div>
+
+        <div class="blog-card">
+            <div class="blog-image">
+                <img src="https://images.unsplash.com/photo-1562151270-c7d22ceb586a?w=600&auto=format&fit=crop&q=60" alt="Behind the Design">
+            </div>
+            <div class="blog-meta">Design &middot; April 2026</div>
+            <h3 class="blog-title">Behind the Design: The LUMI Midi Dress</h3>
+            <p class="blog-excerpt">Our design team shares the inspiration and process behind our best-selling silhouette.</p>
+        </div>
+
+        <div class="blog-card">
+            <div class="blog-image">
+                <img src="https://images.unsplash.com/photo-1541643600914-78b084683601?w=600&auto=format&fit=crop&q=60" alt="Fragrance Notes">
+            </div>
+            <div class="blog-meta">Beauty &middot; March 2026</div>
+            <h3 class="blog-title">Finding Your Signature Scent</h3>
+            <p class="blog-excerpt">A guide to the fragrance families in the LUMI Parfum collection.</p>
+        </div>
+
+        <div class="blog-card">
+            <div class="blog-image">
+                <img src="https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=600&auto=format&fit=crop&q=60" alt="Gift Guide">
+            </div>
+            <div class="blog-meta">Gifting &middot; February 2026</div>
+            <h3 class="blog-title">The LUMI Gift Guide: Timeless Pieces They&rsquo;ll Treasure</h3>
+            <p class="blog-excerpt">Curated gifts for every kind of woman, from the minimalist to the maximalist.</p>
+        </div>
+
+        <div class="blog-card">
+            <div class="blog-image">
+                <img src="https://images.unsplash.com/photo-1522312346375-d1a52e2b99b3?w=600&auto=format&fit=crop&q=60" alt="Watch Collection">
+            </div>
+            <div class="blog-meta">Accessories &middot; January 2026</div>
+            <h3 class="blog-title">Why a Quality Watch Is Worth the Investment</h3>
+            <p class="blog-excerpt">How a well-made timepiece elevates every outfit and lasts a lifetime.</p>
+        </div>
+    </div>
+</section>
+
+<section class="qa-section reveal">
+    <h2 class="section-title">Questions?</h2>
+    <div class="gold-line"></div>
+    <div class="qa-list">
+        <div class="qa-item">
+            <button class="qa-question">What is your shipping policy?<span class="qa-icon">+</span></button>
+            <div class="qa-answer">We offer free shipping on all orders over $75. Standard delivery takes 3&ndash;7 business days. Express shipping is available at checkout for an additional fee.</div>
+        </div>
+        <div class="qa-item">
+            <button class="qa-question">How do I return or exchange an item?<span class="qa-icon">+</span></button>
+            <div class="qa-answer">We accept returns within 30 days of delivery. Items must be unworn with tags attached. Start a return from your account or contact our support team for assistance. Exchanges are free.</div>
+        </div>
+        <div class="qa-item">
+            <button class="qa-question">Do you ship internationally?<span class="qa-icon">+</span></button>
+            <div class="qa-answer">Yes, we ship to over 40 countries worldwide. International shipping rates and delivery times vary by destination. Duties and taxes are calculated at checkout.</div>
+        </div>
+        <div class="qa-item">
+            <button class="qa-question">How do I find my size?<span class="qa-icon">+</span></button>
+            <div class="qa-answer">Each product page includes a detailed size guide. If you are between sizes, we recommend sizing up for a more comfortable fit. Our customer care team is also happy to help.</div>
+        </div>
+    </div>
+</section>
+
+<section class="reviews-section reveal">
+    <div class="reviews-head">
+        <h2 class="section-title">Our Customers' Words, Unedited</h2>
+    </div>
+    <div class="reviews-scroll-wrap">
+        <div class="reviews-scroll" id="reviews-scroll">
+
+            <div class="review-card">
+                <div class="review-stars">&#9733; &#9733; &#9733; &#9733; &#9733;</div>
+                <div class="review-product">The Oxford &mdash; Cognac</div>
+                <div class="review-phrase">Comfort and quality</div>
+                <div class="review-text">&ldquo;My number one concern when it comes to shoes is quality and comfort. These oxfords hit all the spots. I will absolutely purchase another pair.&rdquo;</div>
+                <div class="review-author">-Thad J.</div>
+            </div>
+
+            <div class="review-card">
+                <div class="review-stars">&#9733; &#9733; &#9733; &#9733; &#9733;</div>
+                <div class="review-product">The Penny &mdash; Black</div>
+                <div class="review-phrase">Wore them all day &mdash; zero complaints</div>
+                <div class="review-text">&ldquo;Bought these for a weekend trip and walked miles through the city. Fit was perfect right out of the box, feet felt great. Definitely will be a LUMI customer for life.&rdquo;</div>
+                <div class="review-author">-Michelle</div>
+            </div>
+
+            <div class="review-card">
+                <div class="review-stars">&#9733; &#9733; &#9733; &#9733; &#9733;</div>
+                <div class="review-product">The Tote &mdash; Black</div>
+                <div class="review-phrase">Worth every penny</div>
+                <div class="review-text">&ldquo;I have been searching for the perfect everyday tote and LUMI delivered. The leather is soft yet durable, the stitching is impeccable, and it fits everything I need. Hands down my best purchase this year.&rdquo;</div>
+                <div class="review-author">-Priya K.</div>
+            </div>
+
+            <div class="review-card">
+                <div class="review-stars">&#9733; &#9733; &#9733; &#9733; &#9734;</div>
+                <div class="review-product">The Midi Dress &mdash; Ivory</div>
+                <div class="review-phrase">Absolutely stunning</div>
+                <div class="review-text">&ldquo;Wore this to a dinner party and got so many compliments. The fit is flattering and the fabric feels so luxurious. I will definitely be ordering more colors.&rdquo;</div>
+                <div class="review-author">-Sarah M.</div>
+            </div>
+
+            <div class="review-card">
+                <div class="review-stars">&#9733; &#9733; &#9733; &#9733; &#9733;</div>
+                <div class="review-product">The Belt &mdash; Cognac</div>
+                <div class="review-phrase">Timeless accessory</div>
+                <div class="review-text">&ldquo;The quality of this belt is unmatched. Full-grain leather that will only get better with age. The hardware has a nice weight to it. A staple piece for any wardrobe.&rdquo;</div>
+                <div class="review-author">-Marcus D.</div>
+            </div>
+
+            <div class="review-card">
+                <div class="review-stars">&#9733; &#9733; &#9733; &#9733; &#9733;</div>
+                <div class="review-product">Intense EDP</div>
+                <div class="review-phrase">Signature scent found</div>
+                <div class="review-text">&ldquo;I am obsessed with this perfume. It lasts all day and I get stopped constantly to ask what I am wearing. Deep, warm, and sophisticated. This is my new signature.&rdquo;</div>
+                <div class="review-author">-Elena V.</div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<footer>
+    <div class="footer-grid">
+        <div class="footer-brand">
+            <div class="logo"><img src="L.svg" alt="LUMI"></div>
+            <div class="tagline">Live in Style</div>
+            <p>Modern fashion and lifestyle essentials.</p>
+        </div>
+        <div class="footer-col">
+            <h4>Shop</h4>
+            <ul>
+                <li><a href="Go_to_shopping.html">Women</a></li>
+                <li><a href="Go_to_shopping.html">Men</a></li>
+                <li><a href="Go_to_shopping.html">Bags</a></li>
+                <li><a href="Go_to_shopping.html">Perfume</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h4>Company</h4>
+            <ul>
+                <li><a href="#">About Lumi</a></li>
+                <li><a href="#">Sustainability</a></li>
+                <li><a href="#">Careers</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h4>Help</h4>
+            <ul>
+                <li><a href="#">Shipping &amp; Returns</a></li>
+                <li><a href="#">Track Order</a></li>
+                <li><a href="#">Contact Us</a></li>
+            </ul>
+        </div>
+        <div class="footer-newsletter">
+            <h4>Join our Newsletter</h4>
+            <p>Sign up for early access to new drops and members-only offers.</p>
+            <form class="newsletter-form">
+                <input type="email" placeholder="Your email address">
+                <button type="submit">Join</button>
+            </form>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <div>&copy; 2026 LUMI. All rights reserved.</div>
+        <div class="socials">
+            <a href="#" title="Instagram"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+            <a href="#" title="TikTok"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"/></svg></a>
+            <a href="#" title="Facebook"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+        </div>
+    </div>
+</footer>
+
+<div id="search-overlay" class="search-overlay">
+    <div class="search-modal">
+        <div class="search-header">
+            <input type="text" id="search-input" placeholder="Search products..." autocomplete="off">
+            <button id="search-close" class="search-close-btn">&times;</button>
+        </div>
+        <div id="search-results" class="search-results"></div>
+    </div>
+</div>
+
+<script src="script.js"></script>
+<script>
+    LUMI.initSearch([
+        { name: 'LUMI Tote Bag', price: 189 },
+        { name: 'LUMI Eau de Parfum', price: 89 },
+        { name: 'LUMI Leather Belt', price: 65 },
+        { name: 'LUMI Denim', price: 98 },
+        { name: 'LUMI Heels', price: 129 },
+        { name: 'LUMI Sunglasses', price: 79 },
+        { name: 'LUMI Watch', price: 199 },
+        { name: 'LUMI Midi Dress', price: 159 },
+        { name: 'LUMI Penny Loafers', price: 139 },
+        { name: 'LUMI Jewelry', price: 79 },
+        { name: 'LUMI Pour Homme', price: 89 },
+        { name: 'LUMI Intense EDP', price: 95 },
+        { name: 'LUMI Tailored Blazer', price: 249 },
+        { name: 'LUMI Linen Blazer', price: 189 },
+        { name: 'LUMI Silk Slip Dress', price: 145 },
+        { name: 'LUMI Crossbody Bag', price: 149 },
+        { name: 'LUMI Ankle Boot', price: 159 },
+        { name: 'LUMI Leather Sneaker', price: 119 },
+        { name: 'LUMI Cuff Bracelet', price: 89 },
+        { name: 'LUMI Silk Scarf', price: 75 },
+        { name: 'LUMI Oud EDP', price: 109 }
+    ]);
+</script>
+</body>
+</html>

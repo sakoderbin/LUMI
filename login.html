@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LUMI — Login</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400;1,500;1,600&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600;1,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+.login-page{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:40px 20px 80px;
+    background: var(--bg-section);
+    min-height:85vh;
+}
+.login-box{
+    background: var(--surface);
+    width:100%;
+    max-width:400px;
+    padding:44px 36px 36px;
+    border:1px solid var(--border);
+    animation: fadeInScale 0.5s ease;
+}
+.login-back{
+    display:inline-block;
+    font-size:11px;
+    letter-spacing:1px;
+    text-transform:uppercase;
+    color: var(--text-muted);
+    margin-bottom:16px;
+    transition:color 0.2s;
+}
+.login-back:hover{
+    color: var(--gold);
+}
+.login-tabs{
+    display:flex;
+    gap:0;
+    margin-bottom:24px;
+    border-bottom:1px solid var(--border);
+}
+.login-tab{
+    flex:1;
+    padding:12px 0;
+    text-align:center;
+    font-size:11px;
+    letter-spacing:2px;
+    text-transform:uppercase;
+    color: var(--text-muted);
+    background:none;
+    border:none;
+    border-bottom:1px solid transparent;
+    cursor:pointer;
+    font-family:inherit;
+    transition:color 0.2s, border-color 0.2s;
+}
+.login-tab:hover{
+    color: var(--text);
+}
+.login-tab.active{
+    color: var(--gold);
+    border-bottom-color: var(--gold);
+    font-weight:700;
+}
+.login-box h2{
+    font-family: var(--font-display);
+    font-size:26px;
+    font-weight:600;
+    text-align:center;
+    margin-bottom:4px;
+    color: var(--text);
+}
+.login-box .sub{
+    text-align:center;
+    font-size:12px;
+    color: var(--text-soft);
+    margin-bottom:24px;
+}
+.login-box form{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+}
+.login-box input{
+    padding:13px 14px;
+    border:1px solid var(--border);
+    font-size:13px;
+    font-family:inherit;
+    background: var(--bg-section);
+    color: var(--text);
+    transition:border-color 0.3s;
+    width:100%;
+}
+.login-box input:focus{
+    outline:none;
+    border-color: var(--gold);
+}
+.login-box input::placeholder{
+    color: var(--text-muted);
+}
+.inline-logo{
+    display:inline;
+    height:28px;
+    width:auto;
+    vertical-align:middle;
+    margin-bottom:2px;
+}
+.login-box .btn-primary{
+    margin-top:6px;
+    padding:14px;
+    background: var(--gold);
+    color: var(--dark);
+    border:none;
+    font-size:11px;
+    letter-spacing:3px;
+    text-transform:uppercase;
+    font-weight:700;
+    transition:all 0.3s;
+    cursor:pointer;
+    font-family:inherit;
+}
+.login-box .btn-primary:hover{
+    background: var(--gold-bright);
+}
+.login-divider{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    margin:18px 0;
+}
+.login-divider::before,
+.login-divider::after{
+    content:'';
+    flex:1;
+    height:1px;
+    background: var(--border);
+}
+.login-divider span{
+    font-size:10px;
+    letter-spacing:1px;
+    text-transform:uppercase;
+    color: var(--text-muted);
+}
+.btn-google{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+    width:100%;
+    padding:12px;
+    background:transparent;
+    border:1px solid var(--border);
+    color: var(--text-soft);
+    font-size:12px;
+    font-family:inherit;
+    cursor:pointer;
+    transition:all 0.3s;
+}
+.btn-google:hover{
+    border-color: var(--gold);
+    color: var(--text);
+}
+.login-note{
+    text-align:center;
+    font-size:11px;
+    color: var(--text-muted);
+    margin-top:20px;
+    line-height:1.6;
+}
+#signin-fields, #signup-fields{
+    display:none;
+}
+#signin-fields.active, #signup-fields.active{
+    display:flex;
+}
+@media (max-width: 560px){
+    .login-box{ padding:28px 16px; }
+    .login-tab{ font-size:10px; padding:10px 0; }
+    .login-box h2{ font-size:22px; }
+    .login-box .sub{ font-size:11px; margin-bottom:18px; }
+    .login-box input{ padding:11px 12px; font-size:12px; }
+    .login-box .btn-primary{ padding:12px; font-size:10px; }
+    .btn-google{ padding:10px; font-size:11px; }
+    .login-note{ font-size:10px; }
+}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+    <nav class="main-nav">
+        <div class="nav-left">
+            <button class="nav-toggle" id="nav-toggle" aria-label="Menu">&#9776;</button>
+            <a href="index.html" class="nav-logo"><img src="L.svg" alt="LUMI"></a>
+            <ul>
+                <li><a href="Go_to_shopping.html">New In</a></li>
+                <li><a href="Go_to_shopping.html">Women</a></li>
+                <li><a href="Go_to_shopping.html">Men</a></li>
+                <li><a href="Go_to_shopping.html">Bags</a></li>
+                <li><a href="Go_to_shopping.html">Shoes</a></li>
+                <li><a href="Go_to_shopping.html">Accessories</a></li>
+                <li><a href="Go_to_shopping.html">Perfume</a></li>
+                <li><a href="Go_to_shopping.html" class="sale">Sale</a></li>
+            </ul>
+        </div>
+        <div class="nav-right">
+            <div class="nav-search">
+                <input type="text" id="nav-search-input" placeholder="Search...">
+            </div>
+            <a href="login.html" title="Account" id="account-link">&#9679; <span class="account-name">Login</span></a>
+            <a href="#" title="Wishlist"><svg class="bm-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg></a>
+            <a href="cart.html" title="Cart">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+                <span class="cart-count">(<span id="cart-count">0</span>)</span>
+            </a>
+        </div>
+    </nav>
+    <div class="mobile-menu" id="mobile-menu">
+        <div class="mobile-menu-panel">
+            <button class="mobile-close" id="mobile-close" aria-label="Close">&times;</button>
+            <div class="mobile-search-wrap">
+                <input type="text" id="mobile-search-input" placeholder="Search products...">
+            </div>
+            <ul class="mobile-menu-links">
+                <li><a href="Go_to_shopping.html">New In</a></li>
+                <li><a href="Go_to_shopping.html">Women</a></li>
+                <li><a href="Go_to_shopping.html">Men</a></li>
+                <li><a href="Go_to_shopping.html">Bags</a></li>
+                <li><a href="Go_to_shopping.html">Shoes</a></li>
+                <li><a href="Go_to_shopping.html">Accessories</a></li>
+                <li><a href="Go_to_shopping.html">Perfume</a></li>
+                <li><a href="Go_to_shopping.html" class="sale">Sale</a></li>
+            </ul>
+            <a href="login.html" class="mobile-account-link">&#9679; Account</a>
+        </div>
+    </div>
+</header>
+
+<section class="login-page">
+    <div class="login-box">
+        <a href="javascript:history.back()" class="login-back">&#8592; Back</a>
+
+        <div class="login-tabs">
+            <button class="login-tab active" data-form="signin">Sign In</button>
+            <button class="login-tab" data-form="signup">Create Account</button>
+        </div>
+
+        <form id="signin-fields" class="active">
+            <h2>Welcome Back</h2>
+            <p class="sub">Sign in to your <img src="L.svg" alt="LUMI" class="inline-logo"> account.</p>
+            <input type="email" placeholder="Email Address" required>
+            <input type="password" placeholder="Password" required>
+            <button type="submit" class="btn-primary">Sign In</button>
+        </form>
+
+        <form id="signup-fields">
+            <h2>Join LUMI</h2>
+            <p class="sub">Create your account to start shopping.</p>
+            <input type="email" placeholder="Email Address" required>
+            <input type="password" placeholder="Password" required>
+            <button type="submit" class="btn-primary">Create Account</button>
+        </form>
+
+        <div class="login-divider"><span>or</span></div>
+
+        <button class="btn-google">
+            <svg viewBox="0 0 24 24" width="16" height="16"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 0 1-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
+            Continue with Google
+        </button>
+
+        <p class="login-note">By continuing you agree to LUMI's Terms of Service and Privacy Policy.</p>
+    </div>
+</section>
+
+<script src="script.js"></script>
+<script>
+    (function () {
+        var tabs = document.querySelectorAll('.login-tab');
+        var signinForm = document.getElementById('signin-fields');
+        var signupForm = document.getElementById('signup-fields');
+
+        for (var i = 0; i < tabs.length; i++) {
+            tabs[i].addEventListener('click', function () {
+                for (var j = 0; j < tabs.length; j++) {
+                    tabs[j].classList.remove('active');
+                }
+                this.classList.add('active');
+                var form = this.getAttribute('data-form');
+                signinForm.classList.toggle('active', form === 'signin');
+                signupForm.classList.toggle('active', form === 'signup');
+            });
+        }
+
+        function handleSubmit(e) {
+            e.preventDefault();
+            var email = this.querySelector('input[type="email"]').value.trim();
+            if (!email) return;
+            var user = { name: email.split('@')[0], email: email };
+            localStorage.setItem('lumiUser', JSON.stringify(user));
+            localStorage.setItem('lumiLoggedIn', 'true');
+            sessionStorage.setItem('lumiJustLoggedIn', 'true');
+            var params = new URLSearchParams(window.location.search);
+            var redirect = params.get('redirect');
+            window.location.href = redirect || 'index.html';
+        }
+
+        signinForm.addEventListener('submit', handleSubmit);
+        signupForm.addEventListener('submit', handleSubmit);
+    })();
+</script>
+
+</body>
+</html>
